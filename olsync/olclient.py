@@ -205,6 +205,8 @@ class OverleafClient(object):
         folder_id = project_infos['rootFolder'][0]['_id']
 
         # The file name contains path separators, check folders
+        sep ='/'#fixme: files whithin subfolders are uploaded in the root folder
+        #windows 11
         if sep in file_name:
             local_folders = file_name.split(sep)[:-1]  # Remove last item since this is the file name
             current_overleaf_folder = project_infos['rootFolder'][0]['folders']  # Set the current remote folder
